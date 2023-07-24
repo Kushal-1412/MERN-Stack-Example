@@ -1,0 +1,33 @@
+pipeline:
+  identifier: Build_MERN_Stack_Example_1690179724924
+  name: Build MERN-Stack-Example
+  orgIdentifier: default
+  projectIdentifier: mern_example_2
+  properties:
+    ci:
+      codebase:
+        build: <+input>
+        connectorRef: account.Github
+        repoName: Kushal-1412/MERN-Stack-Example
+  stages:
+    - stage:
+        identifier: build
+        name: build
+        spec:
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  identifier: npminstall
+                  name: npm_install
+                  spec:
+                    command: npm install
+                  timeout: ""
+                  type: Run
+          platform:
+            arch: Amd64
+            os: Linux
+          runtime:
+            spec: {}
+            type: Cloud
+        type: CI
